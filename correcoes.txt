@@ -1,0 +1,6 @@
+# Correções manuais na base de conhecimento
+# Formato: termo_errado -> termo_certo
+# Linhas em branco e começando com # são ignoradas
+
+bloco J -> bloco I
+GLPI -> Atende UFCA

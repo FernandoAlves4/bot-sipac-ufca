@@ -1,0 +1,358 @@
+======================================================================
+01 - Como consultar a Unidade Atual do processo dentro do SIPAC?
+https://wiki.ufca.edu.br/dti/CSI/SIPAC/consultarUnidadeAtual
+
+Como consultar a Unidade Atual do processo dentro do SIPAC??
+1- Acessar o
+Mesa Virtual
+dentro do SIPAC;
+2- Clicar no menu
+Consultas > Processos > Processo Detalhado
+;
+3- Pesquisar pelo número do processo;
+4- Clicar no botão
+Buscar
+;
+5- Visualizar a Unidade Atual onde o processo está localizado;
+======================================================================
+
+======================================================================
+02 - Como configurar uma unidade para tramitação externa dentro do SIPAC?
+https://wiki.ufca.edu.br/dti/CSI/SIPAC/configurarTramitacaoExterna
+
+Como configurar uma unidade para tramitação externa dentro do SIPAC?
+1-
+Acessar o SIPAC
+;
+2- Acessar o Módulo Protocolo;
+3- Acessar o Mesa Virtual;
+4- Clicar no menu
+Administração > Unidades para Tramitação Externa
+;
+5- Clicar no botão
+Consultar Estruturas
+;
+6- Clicar no Órgão UFCA e no botão
+Selecionar
+;
+7- Clicar no
+ícone de +
+na frente do setor desejado;
+8- Digitar o nome do setor e clicar no botão
+Consultar
+e depois no
+ícone de seta
+na frente do nome do setor desejado;
+9- Verificar se na frente do nome do setor na coluna
+Apta ao PEN
+mudou para SIM;
+======================================================================
+
+======================================================================
+03 - Como consultar a guia de movimentação dentro do módulo de patrimônio do SIPAC?
+https://wiki.ufca.edu.br/dti/CSI/SIPAC/consultarGuiaMovimentacao
+
+Como consultar a guia de movimentação dentro do módulo de patrimônio do SIPAC?
+Deve ser realizado o procedimento para consultar a guia de movimentação seguindo os passos do vídeo de exemplo.
+Cole no navegador a URL do Youtube:
+https://www.youtube.com/watch?v=0rnOvGa_ZpQ?vq=hd1080
+======================================================================
+
+======================================================================
+04 - Como cancelar documento de um processo no SIPAC?
+https://wiki.ufca.edu.br/dti/CSI/SIPAC/cancelarDocumentoProcesso
+
+Como cancelar documento adicionado em um processo no SIPAC?
+
+1 - Informações importantes:
+1.1 - Para solicitar o cancelamento, é necessário estar na unidade onde o processo se encontra;
+1.2 - Qualquer pessoa da unidade pode solicitar o cancelamento, inclusive quem adicionou o documento;
+1.3 - Quem confirma o cancelamento é a chefia da unidade;
+1.4 - Se a solicitação de cancelamento não estiver aparecendo para a chefia, é
+importante verificar
+:
+1.4.1 - se está na
+mesma unidade onde o processo se encontra
+, devendo verificar no canto superior esquerdo, próximo ao nome:
+1.4.2 - se a chefia
+está cadastrada no sistema como chefia
+da referida unidade.
+Obs.: Se no item anterior você selecionou a unidade onde é chefia de fato e não tem acesso à funcionalide "Confirmar Cancelamentos" (item 3.1),
+significa que você não está cadastrado como chefia dessa unidade no sistema
+. Esse cadastro é feito pela PROPLAN.
+
+2 - Solicitação de cancelamento:
+2.1 - O usuário deve acessar a Mesa Virtual do módulo Protocolo;
+2.2 - Filtrar por "Processos na Unidade";
+2.3 - Selecionar o processo que contém o documento a ser cancelado;
+2.4 - Clicar na seção Documentos e selecionar o documento que deseja cancelar;
+2.5 - Clicar no símbolo do cancelamento de documento;
+2.6 - Inserir a justificativa do cancelamento e confirmar.
+
+3 - Confirmação de cancelamento (chefia):
+3.1 - A chefia deve ir na aba Documentos do Menu do Módulo de Protocolo e clicar em "Confirmar Cancelamentos";
+3.2 - Selecionar o documento que deseja aprovar o cancelamento e clicar em aprovar;
+======================================================================
+
+======================================================================
+05 - Como acessar um processo sigiloso no SIPAC?
+https://wiki.ufca.edu.br/dti/CSI/SIPAC/acessarProcessoSigiloso
+
+Como acessar um processo sigiloso no SIPAC?
+
+1 - Informações importantes:
+1.1 - Toda movimentação de um processo sigiloso é feita pela aba "Processos" do Menu do Módulo Protocolo ou na funcionalidade correspondente na Mesa Virtual;
+1.2 - Se não foi você que cadastrou o processo, para ter acesso é necessário ser adicionado nas credenciais de sigilo do processo, pelo usuário que cadastrou;
+1.3 - Quem gerencia os usuários que têm acesso é a pessoa que cadastrou o processo sigiloso;
+1.4 - O usuário que concede o acesso precisa ter a permissão GESTOR SIGILO PROTOCOLO.
+
+2 - Adicionando os usuários que podem visualizar o processo:
+2.1 - O usuário que cadastrou o processo deve ir na aba "Processos" do Menu do Módulo de protocolo e clicar na funcionalidade "Gerenciar Credenciais de Sigilo".
+Obs.: Se você cadastrou o processo e não tem mais acesso a essa funcionalidade, é necessário solicitar à DSTI/DTI.
+Obs.: Verifique se você está na mesma unidade onde realizou o cadastro do processo.
+2.2 - Selecione o processo:
+2.3 - Depois é só pesquisar pelo nome da pessoa (credenciado), escolher se o credenciado pode visualizar todos os documentos do processo (caso contrário, a pessoa terá acesso apenas à capa do processo):
+2.4 - Por fim, é só clicar em adicionar, e o usuário adicionado conseguirá acessar o processo sigiloso.
+======================================================================
+
+======================================================================
+06 - Seu nome não aparece na lista de servidores ao tentar apensar processo no SIPAC? Saiba como resolver.
+https://wiki.ufca.edu.br/dti/CSI/SIPAC/apensarProcesso
+
+Seu nome não aparece na lista de servidores ao tentar apensar/anexar processos no SIPAC? Saiba como resolver.
+
+1 - Informações importantes:
+1.1 - Realizar a juntada de dois processos significa fazer a união entre eles, com o qual se tenha relação ou dependência;
+1.2 -  No SIPAC é possível fazer a juntada por apensação (temporária) ou por anexação (definitiva);
+1.3 - No fluxo de juntada de processo, é necessário escrever ou anexar um despacho (item 2.5);
+1.4 - Ao informar os dados gerais do despacho, é necessário selecionar o servidor responsável pelo despacho, entre os listados naquele campo do sistema;
+1.5 - Pode ocorrer de seu nome não constar naqueles listados pelo sistema (solução no item 3).
+
+2 - Fluxo de juntada de processos:
+2.1 - Clicar em "Juntada de Processos", da aba Processos, do Menu do módulo de Protocolo;
+2.2 - Escolher o processo principal;
+2.3 - Selecionar o processo a ser apensado/anexado e clicar em Apensar/Anexar Processos;
+2.4 - Conferir o(s) processo(s) apensados e Continuar;
+2.5 - Depois é necessário escrever ou anexar o despacho. Nesse momento é necessário informar o servidor responsável pelo despacho;
+2.6 - Por fim, basta selecionar a função do servidor; escrever ou anexar o despacho e clicar em "Cadastrar".
+
+3 - "Servidor Responsável pelo Despacho" - nome não conta na lista:
+3.1 - No momento de cadastrar os dados gerais do despacho (item 2.5) pode ocorrer de você não visualizar seu nome na opção de Servidor Responsável pelo Despacho. Isso ocorre porque a listagem de servidores provém do SigRH;
+3.2 - O sistema lista todos os servidores da sua unidade, que estão devidamente cadastrados no SigRH;
+3.4 - Caso seu nome não conste nessa lista, verifique no SigRH sua unidade de localização, de lotação e de exercício, conforme manual a seguir:
+https://wiki.ufca.edu.br/dti/csi/sigrh/consultarDivisaoAtual
+3.5 - Ao identificar alguma informação errada, entre em contato com a PROGEP, unidade responsável pelo cadastro dos servidores no SigRH.
+======================================================================
+
+======================================================================
+07 - Está conseguindo visualizar processos sigilosos que você não deveria ter acesso? Saiba como resolver.
+https://wiki.ufca.edu.br/dti/CSI/SIPAC/tirarAcessoProcessoSigiloso
+
+Conseguindo visualizar processo sigiloso que você não deveria ser acesso? Saiba como resolver.
+
+1 - Informações importantes:
+1.1 - Se você consegue visualizar um processo sigiloso que você não cadastrou, significa que você foi adicionado nas credenciais de sigilo desse processo;
+1.2 - Quem gerencia as credenciais de sigilo é a pessoa que cadastrou o processo sigiloso;
+1.3 - O usuário que concede ou retira o acesso precisa ter a permissão GESTOR SIGILO PROTOCOLO.
+
+2 - Gerenciando credenciais de sigilo:
+2.1 - O usuário que cadastrou o processo deve ir na aba "Processos" do Menu do Módulo de protocolo e clicar na funcionalidade "Gerenciar Credenciais de Sigilo";
+2.2 - Selecionar o processo:
+2.3 - Na página seguinte, estarão listados todos os credenciados:
+2.4 - Por fim, é só procurar pelo nome do credenciado que está conseguindo acessar o processo indevidamente e clicar no símbolo de revogar credencial, e o usuário não conseguirá mais acessar o processo sigiloso.
+======================================================================
+
+======================================================================
+08 - Como visualizar bens localizados na sua unidade?
+https://wiki.ufca.edu.br/dti/CSI/SIPAC/visualizarBens
+
+Como visualizar os bens que estão sob responsabilidade da sua unidade?
+
+1 - Informações importantes:
+1.1 - Todos os usuários do SIPAC conseguem consultar os bens cadastrados no sistema;
+1.2 - Os bens enviados para sua unidade e ainda não recebidos podem ser visualizados pela aba Patrimônio Móvel >> Movimentação de Bens >> Receber Bens Enviados por Outras Unidades;
+1.3 - A consulta dos bens já recebidos na sua Unidade pode ser realizada pela aba Patrimônio Móvel >> Consultar Bens ou Patrimônio Móvel >> Inventário da Unidade;
+1.4 - Dúvidas quanto ao fluxo de movimentação de bens ou em relação aos responsáveis pelo envio e recebimento dos bens devem ser sanadas pela PROAD, setor responsável pela gestão do patrimônio.
+
+2 - Consultando bens da sua Unidade:
+2.1 - O usuário deve ir na aba Patrimônio Móvel >> Consultar Bens;
+2.2 - É possível consultar bens por diversos critérios. Para visualizar os bens da sua Unidade, basta ir na opção "Informações Relativas à Localização do Bem", selecionar "Unidade Responsável" e pesquisar pelo nome da unidade:
+2.3 - Ao clicar em buscar, serão listados todos os bens daquela unidade;
+2.4 - É possível obter mais informações sobre o bem, clicando no símbolo da lupa ou no número do tombo;
+2.5 - No fim da nova aba que é aberta, é possível visualizar as movimentaçãos daquele bem, inclusive o usuário que realizou o envio ou o recebimento.
+
+3 - Consultando bens pelo número do tombo:
+3.1 - O usuário deve ir na aba Patrimônio Móvel >> Consultar Bens;
+3.2 - Para visualizar um bem pelo número do tombamento, basta ir na opção "Informações Relativas ao Bem", selecionar "Tombamento", digitar o número do tombamento e clicar em "Buscar":
+3.3 - É possível obter mais informações sobre o bem, clicando no símbolo da lupa ou no número do tombo;
+3.4 - No fim da nova aba que é aberta, é possível visualizar as movimentaçãos daquele bem, inclusive o usuário que realizou o envio ou o recebimento, bem como a unidade onde foi recebido.
+======================================================================
+
+======================================================================
+09 - Como adicionar despacho em processo no SIPAC?
+https://wiki.ufca.edu.br/dti/CSI/SIPAC/adicionarDespacho
+
+Como adicionar despacho em processo no SIPAC?
+
+1 - Informações importantes:
+1.1 - Em regra, toda movimentação de um processo ocorre pela aba "Processos" do módulo de protocolo;
+1.2 - Há diferença entre tramitação de documento e tramitação de processo no SIPAC. O documento pode tramitar de forma avulsa ou pode ser adicionado a um processo;
+1.3 - A funcionalidade "Cadastrar Despacho" da aba "Documentos" NÃO serve para adicionar despacho a um Processo;
+1.4 - Em regra, a aba "Documentos" serve apenas para movimentações em documentos avulsos (sem processo);
+1.5 - A funcionalidade para adicionar documento em um processo é a "Adicionar Novos Documentos" da aba "Processos".
+A funcionalidade acima é apenas para cadastro de despacho de documento avulso.
+A seguir está a opção correta para adicionar despacho em um processo:
+
+2 - Fluxo de cadastro de despacho:
+2.1 - Após clicar na opção apresentada anteriormente, escolho o processo para escrever/anexar o despacho:
+2.1 - Pesquise pelo tipo de documento "Despacho", preencha as demais informações sobre o documento e escolha a opção Escrever (diretamente no sistema) ou Anexar o documento:
+2.2 - Depois de escrever ou anexar, clique em "Adicionar Documento";
+2.3 - Por fim, adicione o assinante e finalize o procedimento.
+======================================================================
+
+======================================================================
+10 - Como associar um Programa de Trabalho a um PTRes já cadastrado?
+https://wiki.ufca.edu.br/dti/CSI/SIPAC/associarPTRes
+
+Como associar um Programa de Trabalho a um PTRes já cadastrado?
+
+1 - Informações importantes:
+1.1 - Um Programa de Trabalho Resumido pode ser cadastrado sem o Programa de Trabalho correspondente;
+1.2 - É possível adicionar o Programa de Trabalho ao PTRes já cadastrado indo em Módulo Orçamento >> aba Cadastros >> Programa de Trabalho Resumido >> Listar/Alterar.
+
+2 - Fluxo de associação de um Programa de Trabalho a um PTRes:
+2.1 - Clique em Listar/Alterar:
+2.2 - Procure pelo código ou pelo nome o PTRes cadastrado e clique em buscar. Depois, clique no símbolo de alterar:
+2.3 - Procure o Programa de Trabalho e depois clique em "Atualizar".
+======================================================================
+
+======================================================================
+11 - No momento de assinar um documento no SIPAC está aparecendo funções que você não exerce mais? Saiba como resolver.
+https://wiki.ufca.edu.br/dti/CSI/SIPAC/escolherFuncaoAssinatura
+
+No momento de assinar um documento no SIPAC está aparecendo funções que você não exerce mais? Saiba como resolver.
+
+1 - Informações importantes:
+1.1 - No momento de assinar um documento no SIPAC, é necessário escolher a função de assinatura, isto é, por qual função você está assinando. Por exemplo: documento a ser assinado pela chefia do setor - escolher função correspondente à chefia;
+1.2 - Pode ocorrer de, mesmo você estando na unidade correta, no SIPAC, constar funções que você exerceu anteriormente em outra unidade;
+1.3 - Essas funções que constam no momento da ssinatura são proveniente do SIGRH;
+1.4 - Se a função está errada, verifique seu cadastro no SIGRH.
+
+2 - Fluxo de assinatura de documento em processo e verificação das funções:
+2.1 - Quando alguém adiciona você como assinante de um documento, inserido em um processo, aparece para você na opção "Assinar Documentos", da aba Processos, do módulo de Protocolo;
+2.2 - Ao clicar em "Assinar Documentos", é necessário selecionar o documento que você deseja assinar e clicar em "Assinar Documentos Selecionados";
+2.3 - Depois, é necessário adicionar a "Função" para qual deseja assinar os documento selecionados:
+2.4 - Você pode assinar apenas por exercer o seu cargo ou pode assinar por exercer a função de chefia de uma determinada unidade, por exemplo:
+2.5 - Perceba que na denominação pode constar a Unidade onde você exerce aquela função.
+
+3 - Resolvendo possíveis divergências:
+3.1 - Se você foi removido para outra unidade pode ocorrer de aparecer a função que você exercia na unidade anterior;
+3.2 - Isso ocorre porque não foi realizada a atualização no seu cadastro no SIGRH;
+3.3 - Caso continue aparecendo a função que você exercia em outra unidade, verifique no SIGRH como está seu cadastro;
+3.4 - Ao entrar no SIGRH, procure pela aba Consultas e clique em Histórico de Designação:
+3.5 - Verifique se a função que você não exerce mais está sem Data de Término:
+3.6 - Caso seu histórico de designações não esteja atualizado, isto é, uma função que você não exerce mais está sem Data de Término ou a nova função que você exerce não está constando nessa página, entre em contato com a PROGEP para que atualizem suas designações no SigRH.
+Obs.: A alteração é feita pela PROGEP no módulo "Cadastro", na aba "Funcional", em "Registros Funcionais >> Designação".
+======================================================================
+
+======================================================================
+12 - Associar usuário a um restaurante no SIPAC - Permissão para acessar o módulo de Restaurante.
+https://wiki.ufca.edu.br/dti/CSI/SIPAC/associarRestaurante
+
+
+======================================================================
+
+======================================================================
+13 - Diferença entre fluxo de processos e fluxo de documentos no SIPAC.
+https://wiki.ufca.edu.br/dti/CSI/SIPAC/fluxoProcessosDocumentos
+
+Diferença entre fluxo de processos e fluxo de documentos no SIPAC
+
+1 - Informações importantes:
+1.1 - Há uma distinção entre o fluxo de processos e o fluxo de documentos no SIPAC. Ao acessar o Menu do módulo de Protocolo, é possível observar que a primeira aba é destinada a "Processos" e a segunda a "Documentos":
+1.2 - Documentos cadastrados de forma avulsa (sem estar vinculado a um processo) não podem ser consultados pelas opções de consultar processos ou "Processos na Unidade";
+1.3 - O cadastro de um documento gera um número de protocolo, já o cadastro do processo gera o número do processo.
+
+2 - Principais diferenças:
+2.1 - Quando um processo ou documento é cadastrado e enviado para sua unidade, o local onde aparece é diferente:
+Documentos não assinados, não aparecem para visualização.
+2.2 - A opção de Adicionar Novos Documentos serve para adicionar documentos em processo preexistente.
+Cadastro de documentos avulsos deve ser feito pela aba Documentos.
+2.3 - Qualquer movimentação de documentos é realizada nesta aba, como cadastrar e alterar documentos, receber e enviar para outra unidade, cadastrar, alterar e remover despacho eletrônico:
+2.4 - Na aba de processos, na função Autuar Processo é possível autuar um documento que está na sua unidade, passando a ser considerado processo.
+
+3 - RESUMO:
+Aba Processos:
+Qualquer movimentação de processo é realizada nesta aba, como cadastrar um processo, adicionar documentos a um processo existente, receber processos e enviar processos para outras unidades.
+Aba Documentos:
+Qualquer movimentação de documentos é realizada nesta aba, como cadastrar e alterar documentos, receber e enviar para outra unidade, cadastrar, alterar e remover despacho eletrônico.
+======================================================================
+
+======================================================================
+14 - Erro ao cadastrar solicitação de empenho: "Processo DV: Campo obrigatório não informado". Saiba como resolver.
+https://wiki.ufca.edu.br/dti/CSI/SIPAC/calcularDigitoVerificador
+
+Como calcular dígito verificador após erro no momento de solicitar empenho?
+
+1 - Informações importantes:
+1.1 - Ao tentar solicitar empenho (Portal Administrativo >> Orçamento >> Solicitar Empenho), o usuário precisa indicar o número do processo. Pode ocorrer de, ao clicar em cadastrar, aparecer a mensagem "Processo DV: Campo obrigatório não informado", mesmo o número estando correto;
+1.2 - Isso ocorre porque o dígito verificador, do processo em questão, foi calculado com regra diferente daquela aceita no formulário de solicitação de empenho;
+1.3 - É necessário calcular o dígito verificador e digitar o novo valor.
+
+2 - Calculando o dígito verificador no SigAdmin:
+2.1 - Ao logar no SigAdmin, deve-se ir na aba Config. do Sistema, procurar por Protoco e clicar em "Calcular Dígitos Verificadores";
+2.2 - Você será direcionado para a tela a seguir, onde deve digitar o número do processo (exceto o dígito verificador), selecionar "Portaria Nº 171, de 28 de dezembro de 1999" e clicar em calcular;
+2.3 - Aparecerá o número processo com um novo dígito verificar;
+2.4 - Por fim, é só repassar o novo dígito verificador a quem vai solicitar o empenho e pedir para que ele substitua no formulário de solicitação de empenho.
+
+3 - Calculando o dígito verificador na wiki:
+3.1 - Clique no link a seguir:
+Clique aqui
+3.2 - Digite o número do processo, sem o DV, e clique em calcular;
+3.4 - O novo dígito verificador aparecerá no canto inferior direito:
+======================================================================
+
+======================================================================
+15 - Download de documento no SIPAC para verificar validade de assinatura.
+https://wiki.ufca.edu.br/dti/CSI/SIPAC/downloadDocumentoSipac
+
+Download de documento no SIPAC para verificar validade de assinatura
+
+1 - Informações importantes:
+1.1 - É possível baixar um documento tanto pela Mesa Virtual como pelo Menu do módulo Protocolo;
+1.2 - Se deseja que o documento seja baixado com a assinatura válida, é necessário baixar pela Mesa Virtual;
+1.3 - Ao visualizar o documento pela Mesa Virtual, há duas formas de fazer o download, sendo uma delas a ideal para que a assinatura continue válida.
+
+2 - Fazendo o download pela Mesa Virtual:
+2.1 - Ao entrar no módulo Protocolo, deve-se acessar a Mesa Virtual:
+2.2 - Siga o fluxo normal de consultar o documento. No caso de documento dentro de um processo, ao abrir o processo, você deve ir na aba Documentos e clicar no documento que deseja baixar:
+2.3 - Você conseguirá visualizar o documento ao lado, e há duas formas de fazer o download. No entanto, para que o documento seja baixado com assinatura válida, deve-se baixar pelo ícone de dentro, conforme demonstrado na imagem:
+2.4 - Ao baixar pelo local correto, a assinatura permanece com a mesma validade de quando o documento foi inserido no sistema. Para verificar, é só utilzar a ferramenta correspondente àquela assinatura, por exemplo: o programa assinador, para assinaturas serpro, e o site validar, para assinaturas
+gov.br
+.
+======================================================================
+
+======================================================================
+16 - Envio de documentos externos pelo SIPAC/ Trâmita Gov.
+https://wiki.ufca.edu.br/dti/CSI/SIPAC/EnvioDocumentoSipactramita
+
+Envio de Documentos pelo SIPAC/ TRÂMITA GOV
+Através do Sipac é possivel realizar o envio de documentos para órgãos externos a instituição:
+O manual pode ser baixado no link abaixo:
+Envio_Documentos_Sipac_versao1.0_2024.pdf
+======================================================================
+
+======================================================================
+17 - Calculadora de Dígito Verificador conforme Portaria Nº 171/1999.
+https://wiki.ufca.edu.br/dti/CSI/SIPAC/calculadoraDV
+
+Calcular dígito verificador:
+Calcular dígito verificador conforme a Portaria Nº 171,
+de 28 de dezembro de 1999
+Digite o processo sem os dígitos
+(somente os numeros com zeros):
+.
+/
+Dígitos calculados:
+======================================================================
+

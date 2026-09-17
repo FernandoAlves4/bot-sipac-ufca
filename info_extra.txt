@@ -1,0 +1,27 @@
+======================================================================
+Atende UFCA: sistema de suporte e abertura de tickets da DTI
+https://atende.ufca.edu.br
+
+A DTI (Diretoria de Tecnologia da Informação) da UFCA fica no **bloco I**.
+
+Para problemas que não podem ser resolvidos pela Wiki ou por este assistente,
+o usuário deve **abrir um chamado no Atende UFCA** (sistema oficial de
+atendimento da DTI, baseado em GLPI).
+
+Como abrir um chamado no Atende UFCA:
+1- Acesse https://atende.ufca.edu.br
+2- Faça login com suas credenciais institucionais
+3- Clique em "Criar chamado" ou "Novo chamado"
+4- Escolha a categoria adequada (ex: Redes, Sistemas, Equipamentos)
+5- Descreva o problema com o máximo de detalhes
+6- Envie o chamado
+
+A equipe da DTI responderá pelo próprio Atende UFCA.
+
+Quando abrir um chamado:
+- Problemas de rede Wi-Fi/Eduroam que não se resolvem com os tutoriais
+- Erros no SIPAC, SIGAA ou SIGRH que não são dúvidas de uso
+- Solicitação de novos acessos
+- Problemas com equipamentos
+- Qualquer coisa que o assistente não consiga responder
+======================================================================
