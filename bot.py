@@ -36,7 +36,7 @@ STOPWORDS = {
     "a", "o", "os", "as", "de", "do", "da", "dos", "das", "um", "uma",
     "uns", "umas", "no", "na", "nos", "nas", "em", "para", "pra", "por",
     "com", "sem", "que", "como", "e", "ou", "se", "ao", "aos", "à", "às",
-    "sobre", "sipac", "processo",
+    "sobre",
     "instalar", "usar", "fazer", "colocar", "criar", "configurar",
     "acessar", "abrir", "clicar", "ver", "preciso", "quero",
     "gostaria", "saber", "faco", "fazer"
@@ -246,46 +246,148 @@ PALAVRAS_DISCRIMINATIVAS = {
 
 
 SINONIMOS = {
+    # ==========================================
+    # REDE E INTERNET
+    # ==========================================
     "wifi": ["rede", "fio", "sem", "wireless"],
     "wi": ["rede", "fio"],
     "fi": ["rede", "fio"],
     "internet": ["rede", "fio", "wifi"],
+    "wireless": ["wifi", "rede"],
+
+    # ==========================================
+    # IMPRESSÃO
+    # ==========================================
     "impressora": ["impressao", "imprimir"],
     "imprimir": ["impressao"],
-    "email": ["office", "conta"],
+    "impressao": ["imprimir", "impressora"],
+
+    # ==========================================
+    # E-MAIL, OFFICE E COMUNICAÇÃO
+    # ==========================================
+    "email": ["office", "outlook", "correio", "conta"],
+    "outlook": ["office", "email"],
+    "teams": ["microsoft", "reuniao", "video"],
+    "reuniao": ["teams", "video", "chamada"],
+    "video": ["teams", "reuniao"],
+
+    # ==========================================
+    # ARMAZENAMENTO EM NUVEM
+    # ==========================================
     "drive": ["onedrive", "one"],
+    "onedrive": ["drive", "one"],
+    "nuvem": ["drive", "onedrive", "armazenamento"],
+    "armazenamento": ["drive", "onedrive", "nuvem"],
+    "compartilhar": ["drive", "arquivo", "enviar"],
+
+    # ==========================================
+    # TELEFONE E RAMAL
+    # ==========================================
     "ramal": ["softphone", "telefone"],
     "telefone": ["ramal", "softphone", "chamada"],
+    "softphone": ["ramal", "telefone"],
+
+    # ==========================================
+    # ASSINATURA DIGITAL
+    # ==========================================
     "assinatura": ["assinar", "assinador"],
     "assinador": ["assinar", "assinatura"],
+    "assinar": ["assinatura", "assinador"],
+
+    # ==========================================
+    # PDF E DOCUMENTOS
+    # ==========================================
     "tarja": ["pdf", "destacar", "ocultar"],
+    "pdf": ["documento", "arquivo", "anexo"],
+    "arquivo": ["documento", "pdf", "anexo", "papel"],
+    "anexo": ["arquivo", "documento", "pdf"],
+    "papel": ["documento", "arquivo"],
+    "digitalizado": ["pdf", "documento"],
+
+    # ==========================================
+    # CADASTRO E CONTA
+    # ==========================================
     "cadastro": ["conta", "criar"],
+    "cadastrar": ["cadastro", "criar", "conta"],
     "conta": ["cadastro", "criar"],
+
+    # ==========================================
+    # CONFIGURAÇÃO
+    # ==========================================
     "configurar": ["configuracao"],
     "configuracao": ["configurar"],
     "configuracoes": ["configurar", "configuracao"],
+
+    # ==========================================
+    # TRAMITAÇÃO E MOVIMENTAÇÃO
+    # ==========================================
     "tramitar": ["tramitacao", "movimentacao"],
     "tramitacao": ["tramitar", "movimentacao"],
-    "movimentar": ["movimentacao"],
-    "movimentacao": ["movimentar"],
+    "movimentar": ["movimentacao", "tramitar"],
+    "movimentacao": ["movimentar", "tramitacao"],
+    "mover": ["tramitar", "movimentar", "enviar"],
+    "enviar": ["tramitar", "mover", "movimentar"],
+    "receber": ["tramitar", "movimentar"],
+    "encaminhar": ["tramitar", "mover"],
+
+    # ==========================================
+    # DESPACHO
+    # ==========================================
     "despachar": ["despacho"],
     "despacho": ["despachar"],
+
+    # ==========================================
+    # CANCELAMENTO
+    # ==========================================
     "cancelar": ["cancelamento"],
     "cancelamento": ["cancelar"],
-    "cadastrar": ["cadastro", "criar", "conta"],
-    "assinar": ["assinatura", "assinador"],
+
+    # ==========================================
+    # SISTEMAS
+    # ==========================================
+    "sei": ["sipac", "processo", "eletronico", "protocolo"],
+    "protocolo": ["processo", "sipac"],
+
+    # ==========================================
+    # SUPORTE E ATENDIMENTO
+    # ==========================================
     "suporte": ["dti", "ticket", "chamado", "atende", "ajuda"],
     "ajuda": ["suporte", "dti", "ticket", "chamado"],
     "chamado": ["ticket", "atende", "suporte", "ajuda"],
+    "chamados": ["ticket", "atende", "chamado"],
     "ticket": ["chamado", "atende", "suporte", "ajuda"],
+    "tickets": ["ticket", "chamado", "atende"],
     "dti": ["suporte", "ticket", "chamado", "atende"],
     "atende": ["ticket", "chamado", "suporte", "dti"],
     "glpi": ["atende", "ticket", "chamado"],
-    "chamados": ["ticket", "atende", "chamado"],
-    "tickets": ["ticket", "chamado", "atende"],
+
+    # ==========================================
+    # CHAMADA TELEFÔNICA (≠ chamado de suporte!)
+    # ==========================================
     "chamada": ["ligacao", "telefone", "ramal", "telefonica"],
     "ligacao": ["chamada", "telefone", "ramal"],
+
+    # ==========================================
+    # ERROS E PROBLEMAS
+    # ==========================================
+    "erro": ["problema", "falha", "nao funciona", "travando"],
+    "problema": ["erro", "falha", "nao funciona"],
+    "travando": ["erro", "problema", "nao funciona"],
+    "falha": ["erro", "problema"],
+    "caiu": ["erro", "problema", "fora"],
+    "lento": ["erro", "problema", "travando"],
+
+    # ==========================================
+    # LOGIN E SENHA
+    # ==========================================
+    "login": ["acesso", "entrar", "senha", "credencial"],
+    "senha": ["login", "acesso", "credencial", "redefinir"],
+    "entrar": ["login", "acessar"],
+    "acessar": ["login", "entrar"],
+    "redefinir": ["senha", "recuperar", "trocar"],
+    "recuperar": ["senha", "redefinir"],
 }
+
 
 
 def expandir_sinonimos(palavras):
@@ -369,8 +471,11 @@ def buscar_resposta_hibrida(pergunta_usuario, top_k_rag=5):
     2. Fuzz reordena esses candidatos com base em texto exato.
     3. Retorna o melhor.
     """
-    # Regra especial: "abrir/criar/preciso chamado/ticket" → Atende UFCA
     pergunta_lower = pergunta_usuario.lower()
+
+    # --------------------------------------------------
+    # REGRA 1: "abrir/criar/preciso chamado/ticket" → Atende UFCA
+    # --------------------------------------------------
     palavras_chamado = ["chamado", "ticket", "chamados", "tickets"]
     palavras_acao = ["abrir", "criar", "novo", "nova", "fazer", "preciso"]
 
@@ -381,6 +486,30 @@ def buscar_resposta_hibrida(pergunta_usuario, top_k_rag=5):
                 bloco["_score"] = 999
                 return bloco
 
+    # --------------------------------------------------
+    # REGRA 2: "problema com SIPAC/SIGAA/etc" → Atende UFCA
+    # --------------------------------------------------
+    palavras_sistema = ["sipac", "sigaa", "sigrh", "sei", "sigs"]
+    palavras_problema = ["lento", "lenta", "erro", "problema", "falha",
+                         "travando", "travado", "caiu", "fora", "parou",
+                         "nao funciona", "não funciona",
+                         "nao abre", "não abre",
+                         "nao carrega", "não carrega",
+                         "nao entra", "não entra",
+                         "nao consigo", "não consigo"]
+
+    tem_sistema = any(p in pergunta_lower for p in palavras_sistema)
+    tem_problema = any(p in pergunta_lower for p in palavras_problema)
+
+    if tem_sistema and tem_problema:
+        for bloco in perguntas_faq:
+            if "atende" in bloco["titulo"].lower():
+                bloco["_score"] = 999
+                return bloco
+
+    # --------------------------------------------------
+    # BUSCA NORMAL (RAG + Fuzz)
+    # --------------------------------------------------
     if not rag_disponivel:
         return buscar_resposta(pergunta_usuario)
 
@@ -846,11 +975,23 @@ async def responder(update: Update, context: ContextTypes.DEFAULT_TYPE):
         resposta = (
             "❌ Não encontrei uma informação relacionada "
             "à sua dúvida na base oficial da UFCA.\n\n"
-            "💡 Tente reformular a pergunta ou usar outras palavras.\n\n"
+            "💡 *Tente reformular usando outras palavras.*\n"
+            "Ex: 'documento' → 'despacho' / 'arquivo'\n"
+            "Ex: 'caiu' → 'erro' / 'não funciona'\n\n"
             "📚 *Assuntos que eu domino:*\n"
-            "SIPAC, Wi-Fi/Eduroam, Office 365, SIGAA/SIGRH, "
-            "impressão, arquivos, assinatura digital e mais.\n\n"
-            "Digite /ajuda para ver exemplos."
+            "• SIPAC — processos, despachos, documentos, tramitação\n"
+            "• Rede — Wi-Fi, Eduroam, VPN\n"
+            "• Sistemas — SIGAA, SIGRH, Office 365, e-mail\n"
+            "• Serviços — impressão, arquivos, assinatura digital\n"
+            "• Suporte — Atende UFCA, DTI\n\n"
+            "💬 *Exemplos de perguntas:*\n"
+            "• Como adicionar um despacho?\n"
+            "• Como consultar a unidade atual?\n"
+            "• Como tramitar um processo?\n"
+            "• Como conectar no Wi-Fi?\n\n"
+            "🆘 *Se não encontrou, abra um chamado:*\n"
+            "https://atende.ufca.edu.br\n\n"
+            "Digite /ajuda para mais exemplos."
         )
 
         await update.message.reply_text(resposta, parse_mode="Markdown")
