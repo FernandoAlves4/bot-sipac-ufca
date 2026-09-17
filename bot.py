@@ -975,9 +975,10 @@ async def responder(update: Update, context: ContextTypes.DEFAULT_TYPE):
         resposta = (
             "❌ Não encontrei uma informação relacionada "
             "à sua dúvida na base oficial da UFCA.\n\n"
-            "💡 *Tente reformular usando outras palavras.*\n"
-            "Ex: 'documento' → 'despacho' / 'arquivo'\n"
-            "Ex: 'caiu' → 'erro' / 'não funciona'\n\n"
+            "💡 *Tente reformular usando outras palavras:*\n"
+            "• 'documento' → 'despacho' / 'arquivo'\n"
+            "• 'caiu' → 'erro' / 'não funciona'\n"
+            "• 'lento' → 'travando' / 'problema'\n\n"
             "📚 *Assuntos que eu domino:*\n"
             "• SIPAC — processos, despachos, documentos, tramitação\n"
             "• Rede — Wi-Fi, Eduroam, VPN\n"
@@ -1014,23 +1015,27 @@ def precisa_contexto(pergunta):
     Retorna True se a pergunta é uma continuação que precisa
     do contexto anterior (ex: "e no Linux?", "também funciona?").
     """
-    pergunta_limpa = pergunta.lower().strip()
+    pergunta_lower = pergunta.lower().strip()
+    palavras = pergunta_lower.split()
 
-    # 1. Pergunta muito curta (< 4 palavras)
-    if len(pergunta_limpa.split()) < 4:
+    # 1. Se a pergunta tem 1 palavra, é continuação
+    if len(palavras) <= 1:
         return True
 
-    # 2. Começa com prefixo de continuação
+    # 2. Se começa com um PREFIXO de continuação, é continuação
+    # (mas o prefixo precisa ser seguido de POUCAS palavras)
     for prefixo in PREFIXOS_CONTINUACAO:
-        if pergunta_limpa.startswith(prefixo):
+        if pergunta_lower.startswith(prefixo):
             return True
 
-    # 3. Contém palavras de continuação fortes
-    palavras = set(pergunta_limpa.split())
-    comuns = palavras & PALAVRAS_CONTINUACAO
-    if comuns and len(pergunta_limpa.split()) < 6:
-        return True
+    # 3. Se tem poucas palavras (2-3) E tem palavra de continuação
+    # (e, também, isso, mais, aí, etc), é continuação
+    if len(palavras) <= 3:
+        for p in palavras:
+            if p in PALAVRAS_CONTINUACAO:
+                return True
 
+    # 4. Caso contrário, NÃO é continuação
     return False
 
 
