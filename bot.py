@@ -491,16 +491,13 @@ def buscar_resposta_hibrida(pergunta_usuario, top_k_rag=5):
     palavras_chamado = ["chamado", "ticket", "chamados", "tickets"]
     palavras_acao = ["abrir", "criar", "novo", "nova", "fazer", "preciso"]
 
-    # Regra especial: "contracheque", "salario", "ferias" → SIGRH
-    palavras_rh = ["contracheque", "holerite", "salario", "salário", "ferias", "férias",
-                   "ponto", "remuneracao", "remuneração", "pagamento"]
-    if any(p in pergunta_lower for p in palavras_rh):
+    if any(p in pergunta_lower for p in palavras_chamado) and \
+       any(p in pergunta_lower for p in palavras_acao):
         for bloco in perguntas_faq:
-            if "sigrh" in bloco["titulo"].lower():
+            if "suporte" in bloco["titulo"].lower() or "atend" in bloco["titulo"].lower():
                 bloco["_score"] = 999
                 return bloco
 
-    # --------------------------------------------------
     # REGRA 2: "problema com SIPAC/SIGAA/etc" → Atende UFCA
     # --------------------------------------------------
     palavras_sistema = ["sipac", "sigaa", "sigrh", "sei", "sigs"]
@@ -517,7 +514,7 @@ def buscar_resposta_hibrida(pergunta_usuario, top_k_rag=5):
 
     if tem_sistema and tem_problema:
         for bloco in perguntas_faq:
-          if "suporte" in bloco["titulo"].lower() or "atend" in bloco["titulo"].lower():
+            if "suporte" in bloco["titulo"].lower() or "atend" in bloco["titulo"].lower():
                 bloco["_score"] = 999
                 return bloco
 
@@ -565,7 +562,8 @@ def buscar_resposta_hibrida(pergunta_usuario, top_k_rag=5):
     ]
     if any(p in pergunta_lower for p in palavras_rh):
         for bloco in perguntas_faq:
-            if "sigrh" in bloco["titulo"].lower():
+            titulo_lower = bloco["titulo"].lower()
+            if "sigrh" in titulo_lower and ("portal" in titulo_lower or "servidor" in titulo_lower):
                 bloco["_score"] = 999
                 return bloco
 
