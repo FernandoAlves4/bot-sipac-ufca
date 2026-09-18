@@ -482,7 +482,7 @@ def buscar_resposta_hibrida(pergunta_usuario, top_k_rag=5):
     if any(p in pergunta_lower for p in palavras_chamado) and \
        any(p in pergunta_lower for p in palavras_acao):
         for bloco in perguntas_faq:
-            if "atende" in bloco["titulo"].lower():
+           if "suporte" in bloco["titulo"].lower() or "atend" in bloco["titulo"].lower():
                 bloco["_score"] = 999
                 return bloco
 
@@ -503,7 +503,41 @@ def buscar_resposta_hibrida(pergunta_usuario, top_k_rag=5):
 
     if tem_sistema and tem_problema:
         for bloco in perguntas_faq:
-            if "atende" in bloco["titulo"].lower():
+          if "suporte" in bloco["titulo"].lower() or "atend" in bloco["titulo"].lower():
+                bloco["_score"] = 999
+                return bloco
+
+    # --------------------------------------------------
+    # REGRA 3: pergunta simples (curta) sobre suporte
+    # --------------------------------------------------
+    palavras_suporte_simples = ["suporte", "atendimento", "ajuda", "chamado", "ticket"]
+
+    # Considera "simples" se tem até 3 palavras
+    # OU se tem uma palavra de suporte + um verbo de ação
+    palavras_acao_curta = ["preciso", "quero", "precisando", "tem", "como"]
+
+    palavras_limpas = pergunta_lower.split()
+    tem_palavra_suporte = any(p in palavras_limpas for p in palavras_suporte_simples)
+    tem_acao_curta = any(p in palavras_limpas for p in palavras_acao_curta)
+
+    if tem_palavra_suporte and (len(palavras_limpas) <= 3 or tem_acao_curta):
+        for bloco in perguntas_faq:
+            if "suporte" in bloco["titulo"].lower() or "atend" in bloco["titulo"].lower():
+                bloco["_score"] = 999
+                return bloco
+            
+    # --------------------------------------------------
+    # REGRA 4: pergunta com "site" + algo de suporte → bloco de suporte
+    # --------------------------------------------------
+    palavras_site = ["site", "url", "link", "endereco", "endereço", "portal"]
+    palavras_suporte_para_site = ["atendimento", "atende", "suporte", "dti", "chamado", "ticket"]
+
+    tem_site = any(p in pergunta_lower for p in palavras_site)
+    tem_suporte_em_site = any(p in pergunta_lower for p in palavras_suporte_para_site)
+
+    if tem_site and tem_suporte_em_site:
+        for bloco in perguntas_faq:
+            if "suporte" in bloco["titulo"].lower() or "atend" in bloco["titulo"].lower():
                 bloco["_score"] = 999
                 return bloco
 
@@ -710,6 +744,15 @@ def obter_historico_por_id(user_id):
 
 def salvar_no_historico_por_id(user_id, pergunta, resposta):
     """Salva uma interação no histórico persistente do usuário."""
+
+    # Remove formatação Markdown/HTML da resposta antes de salvar
+    # (para o /historico mostrar texto limpo)
+    resposta_limpa = resposta.replace("**", "").replace("__", "")
+    resposta_limpa = resposta_limpa.replace("<b>", "").replace("</b>", "")
+    resposta_limpa = resposta_limpa.replace("<i>", "").replace("</i>", "")
+    resposta_limpa = resposta_limpa.replace("`", "")
+    resposta = resposta_limpa
+
     if not user_id:
         print(" user_id vazio, não salva", flush=True)
         return
@@ -754,6 +797,11 @@ _limpar_historicos_antigos()
 # --------------------------------------------------
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # Limpeza extra: converter Markdown residual para HTML
+    resposta = resposta.replace("**", "")  # Remove asteriscos duplos
+    # Converte *texto* para <b>texto</b> (se houver)
+    import re as _re
+    resposta = _re.sub(r"(?<!\*)\*(?!\s)(.+?)(?<!\s)\*(?!\*)", r"<b>\1</b>", resposta)
     await update.message.reply_text(
         "Olá! 👋\n\n"
         "Sou o Assistente da Wiki UFCA.\n"
@@ -773,34 +821,34 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def ajuda(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "📚 *Como usar o Assistente da Wiki UFCA*\n\n"
+        "📚 <b>Como usar o Assistente da Wiki UFCA</b>\n\n"
         "Sou um bot que responde dúvidas com base na *Wiki oficial da UFCA*.\n\n"
-        "💬 *Como perguntar:*\n"
+        "💬 <b>Como perguntar:</b>\n"
         "Manda sua dúvida em linguagem natural. Exemplos:\n\n"
-        "📋 *SIPAC (sistema de processos):*\n"
+        "📋 <b>SIPAC (sistema de processos):</b>\n"
         "• Como adicionar um despacho em um processo?\n"
         "• Como cancelar um documento?\n"
         "• Como consultar a unidade atual?\n"
         "• Como assinar um documento?\n\n"
-        "🌐 *Rede e sistemas:*\n"
+        "🌐 <b>Rede e sistemas:</b>\n"
         "• Como conectar no Wi-Fi da UFCA?\n"
         "• Configurar Eduroam no Linux\n"
         "• Esqueci minha senha do SIGAA\n"
         "• Como instalar o Office?\n\n"
-        "🖨️ *Outros serviços:*\n"
+        "🖨️ <b>Outros serviços:</b>\n"
         "• Como usar a impressora?\n"
         "• Como acessar o servidor de arquivos?\n"
         "• Como assinar documentos digitalmente?\n\n"
-        "📌 *Comandos úteis:*\n"
+        "📌 <b>Comandos úteis:</b>\n"
         "• /start — boas-vindas\n"
         "• /status — estatísticas do bot\n"
         "• /historico — ver o que você já perguntou\n"
         "• /limpar — apagar seu histórico de conversa\n\n"
-        "📌 *Fontes:*\n"
+        "📌 <b>Fontes:</b>\n"
         "FAQ do SIPAC + 22 tutoriais da Wiki UFCA + info extra.\n\n"
-        "⚠️ *Importante:*\n"
+        "⚠️ <b>Importante:</b>\n"
         "Não invento respostas. Se não encontrar na base, eu aviso.",
-        parse_mode="Markdown"
+        parse_mode="HTML"
     )
 
 
@@ -840,16 +888,16 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ultima = "?"
 
     mensagem = (
-        "📊 *Painel do Bot*\n\n"
-        f"📚 Base: *{total_base}* blocos carregados\n"
-        f"❓ Perguntas não encontradas: *{nao_encontradas}*\n"
-        f"👍 Feedbacks positivos: *{positivos}*\n"
-        f"👎 Feedbacks negativos: *{negativos}*\n"
-        f"📈 Taxa de acerto: *{taxa_str}*\n\n"
+        "📊 <b>Painel do Bot</b>\n\n"
+        f"📚 Base: <b>{total_base}</b> blocos carregados\n"
+        f"❓ Perguntas não encontradas: <b>{nao_encontradas}</b>\n"
+        f"👍 Feedbacks positivos: <b>{positivos}</b>\n"
+        f"👎 Feedbacks negativos: <b>{negativos}</b>\n"
+        f"📈 Taxa de acerto: <b>{taxa_str}</b>\n\n"
         f"🕐 Base atualizada em: {ultima}"
     )
 
-    await update.message.reply_text(mensagem, parse_mode="Markdown")
+    await update.message.reply_text(mensagem, parse_mode="HTML")
 
 
 # --------------------------------------------------
@@ -880,18 +928,23 @@ async def ver_historico(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         return
 
-    linhas = [f"📜 *Suas últimas {len(historico)} perguntas:*\n"]
+    linhas = [f"📜 <b>Suas últimas {len(historico)} perguntas:</b>\n"]
+
     for i, h in enumerate(historico, start=1):
-        linhas.append(f"{i}. _{h['pergunta']}_")
-        resposta_curta = h['resposta'][:100].replace("\n", " ")
-        linhas.append(f"   → {resposta_curta}...")
+        # Limpa quebras de linha e formatação da resposta
+        pergunta = h['pergunta']
+        resposta = h['resposta'][:120].replace("\n", " ").strip()
+
+        linhas.append(f"<b>{i}. {pergunta}</b>")
+        linhas.append(f"   <i>→ {resposta}...</i>")
         linhas.append("")
+
+    linhas.append(f"<i>Use /limpar para apagar o histórico.</i>")
 
     await update.message.reply_text(
         "\n".join(linhas),
-        parse_mode="Markdown"
+        parse_mode="HTML"
     )
-
 
 # --------------------------------------------------
 # RESPONDER PERGUNTAS
@@ -967,7 +1020,11 @@ async def responder(update: Update, context: ContextTypes.DEFAULT_TYPE):
         salvar_no_historico_por_id(user_id, pergunta, texto_para_historico)
         
 
-        await update.message.reply_text(resposta, reply_markup=botoes)
+        await update.message.reply_text(
+    resposta,
+    reply_markup=botoes,
+    parse_mode="HTML"
+)
 
     else:
         registrar_nao_encontrada(pergunta)
@@ -975,27 +1032,27 @@ async def responder(update: Update, context: ContextTypes.DEFAULT_TYPE):
         resposta = (
             "❌ Não encontrei uma informação relacionada "
             "à sua dúvida na base oficial da UFCA.\n\n"
-            "💡 *Tente reformular usando outras palavras:*\n"
+            "💡 <b>Tente reformular usando outras palavras:</b>\n"
             "• 'documento' → 'despacho' / 'arquivo'\n"
             "• 'caiu' → 'erro' / 'não funciona'\n"
             "• 'lento' → 'travando' / 'problema'\n\n"
-            "📚 *Assuntos que eu domino:*\n"
+            "📚 <b>Assuntos que eu domino:</b>\n"
             "• SIPAC — processos, despachos, documentos, tramitação\n"
             "• Rede — Wi-Fi, Eduroam, VPN\n"
             "• Sistemas — SIGAA, SIGRH, Office 365, e-mail\n"
             "• Serviços — impressão, arquivos, assinatura digital\n"
             "• Suporte — Atende UFCA, DTI\n\n"
-            "💬 *Exemplos de perguntas:*\n"
+            "💬 <b>Exemplos de perguntas:</b>\n"
             "• Como adicionar um despacho?\n"
             "• Como consultar a unidade atual?\n"
             "• Como tramitar um processo?\n"
             "• Como conectar no Wi-Fi?\n\n"
-            "🆘 *Se não encontrou, abra um chamado:*\n"
+            "🆘 <b>Se não encontrou, abra um chamado:</b>\n"
             "https://atendimento.ufca.edu.br\n\n"
             "Digite /ajuda para mais exemplos."
         )
 
-        await update.message.reply_text(resposta, parse_mode="Markdown")
+        await update.message.reply_text(resposta, parse_mode="HTML")
 
 # --------------------------------------------------
 # DETECTAR PERGUNTAS QUE PRECISAM DE CONTEXTO
