@@ -991,7 +991,7 @@ async def responder(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "• Como tramitar um processo?\n"
             "• Como conectar no Wi-Fi?\n\n"
             "🆘 *Se não encontrou, abra um chamado:*\n"
-            "https://atende.ufca.edu.br\n\n"
+            "https://atendimento.ufca.edu.br\n\n"
             "Digite /ajuda para mais exemplos."
         )
 

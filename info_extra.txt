@@ -1,15 +1,25 @@
 ======================================================================
-Atende UFCA: sistema de suporte e abertura de tickets da DTI
-https://atende.ufca.edu.br
+Contatos e atendimento da DTI
+https://atendimento.ufca.edu.br
 
-A DTI (Diretoria de Tecnologia da Informação) da UFCA fica no **bloco I**.
+A DTI (Diretoria de Tecnologia da Informação) é o setor responsável pelo
+suporte de TI na UFCA.
 
-Para problemas que não podem ser resolvidos pela Wiki ou por este assistente,
-o usuário deve **abrir um chamado no Atende UFCA** (sistema oficial de
-atendimento da DTI, baseado em GLPI).
+📍 Localização: Campus Juazeiro do Norte — **Bloco I**
+   ⚠️ Obs.: algumas placas antigas ainda indicam "Bloco J". O correto é Bloco I.
+
+📞 Telefone: +55 88 3221 9400
+📧 E-mail: atendimento.dti@ufca.edu.br
+🌐 Site de atendimento: https://atendimento.ufca.edu.br
+
+A DTI atende demandas de:
+- Sistemas (SIGAA, SIPAC, SIGRH, e-mail, Office 365)
+- Rede e internet (Wi-Fi, Eduroam, VPN)
+- Equipamentos e impressoras
+- Acessos e senhas
 
 Como abrir um chamado no Atende UFCA:
-1- Acesse https://atende.ufca.edu.br
+1- Acesse https://atendimento.ufca.edu.br
 2- Faça login com suas credenciais institucionais
 3- Clique em "Criar chamado" ou "Novo chamado"
 4- Escolha a categoria adequada (ex: Redes, Sistemas, Equipamentos)
@@ -81,7 +91,7 @@ de login, ou abra um chamado no Atende UFCA.
 
 ======================================================================
 Como recuperar ou redefinir a senha dos SIGs (SIGAA, SIPAC, SIGRH)
-https://atende.ufca.edu.br
+https://atendimento.ufca.edu.br
 
 Se você esqueceu a senha dos sistemas SIGs (SIGAA, SIPAC, SIGRH) da UFCA:
 
@@ -95,7 +105,7 @@ Opção 2 (presencial):
 2- Solicite a redefinição de senha
 
 Opção 3 (chamado):
-1- Acesse https://atende.ufca.edu.br
+1- Acesse https://atendimento.ufca.edu.br
 2- Abra um chamado na categoria "Sistemas" ou "Acesso"
 3- Aguarde o retorno da equipe da DTI
 ======================================================================
@@ -111,14 +121,14 @@ Campus sede (Juazeiro do Norte - CE):
 A DTI (Diretoria de Tecnologia da Informação) fica no bloco I do campus sede.
 
 Site oficial da UFCA: https://www.ufca.edu.br/
-Sistema de atendimento (Atende UFCA): https://atende.ufca.edu.br
+Sistema de atendimento (Atende UFCA): https://atendimento.ufca.edu.br
 
 Para informações atualizadas de contatos, consulte o site oficial da UFCA.
 ======================================================================
 
 ======================================================================
 Atendimento da DTI (Diretoria de Tecnologia da Informação)
-https://atende.ufca.edu.br
+https://atendimento.ufca.edu.br
 
 A DTI é o setor responsável pelo suporte técnico relacionado a:
 - Sistemas (SIPAC, SIGAA, SIGRH, SEI, e-mail, Office 365)
@@ -127,11 +137,11 @@ A DTI é o setor responsável pelo suporte técnico relacionado a:
 - Acessos e senhas
 
 Canais de atendimento:
-- Sistema oficial: https://atende.ufca.edu.br (abertura de chamados)
+- Sistema oficial: https://atendimento.ufca.edu.br (abertura de chamados)
 - Presencial: bloco I (campus sede, Juazeiro do Norte)
 
 Para abrir um chamado:
-1- Acesse https://atende.ufca.edu.br
+1- Acesse https://atendimento.ufca.edu.br
 2- Faça login com suas credenciais institucionais
 3- Clique em "Criar chamado"
 4- Escolha a categoria e descreva o problema

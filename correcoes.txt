@@ -2,5 +2,9 @@
 # Formato: termo_errado -> termo_certo
 # Linhas em branco e começando com # são ignoradas
 
-bloco J -> bloco I
+# A Wiki UFCA ainda diz "bloco J", mas a DTI mudou para o bloco I.
+# A placa física também está desatualizada. O correto é bloco I.
+bloco J -> bloco I (obs.: a placa antiga ainda pode indicar J)
+
+# O sistema de atendimento é o Atende UFCA (antes era chamado de GLPI).
 GLPI -> Atende UFCA
