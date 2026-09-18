@@ -813,7 +813,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Pode enviar sua dúvida!\n\n"
         "Digite /ajuda para ver exemplos de perguntas."
     )
-
+    
 
 # --------------------------------------------------
 # COMANDO /AJUDA
@@ -821,37 +821,65 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def ajuda(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "📚 <b>Como usar o Assistente da Wiki UFCA</b>\n\n"
-        "Sou um bot que responde dúvidas com base na *Wiki oficial da UFCA*.\n\n"
-        "💬 <b>Como perguntar:</b>\n"
-        "Manda sua dúvida em linguagem natural. Exemplos:\n\n"
-        "📋 <b>SIPAC (sistema de processos):</b>\n"
-        "• Como adicionar um despacho em um processo?\n"
+        "<b>📚 Assistente da Wiki UFCA</b>\n\n"
+        "Sou um bot que responde dúvidas sobre a UFCA "
+        "com base em fontes oficiais (Wiki UFCA).\n\n"
+        "<b>💬 Como perguntar:</b>\n"
+        "Escreva sua dúvida em linguagem natural. Exemplos:\n\n"
+        "<b>📋 SIPAC (processos):</b>\n"
+        "• Como adicionar um despacho?\n"
         "• Como cancelar um documento?\n"
-        "• Como consultar a unidade atual?\n"
-        "• Como assinar um documento?\n\n"
-        "🌐 <b>Rede e sistemas:</b>\n"
-        "• Como conectar no Wi-Fi da UFCA?\n"
-        "• Configurar Eduroam no Linux\n"
-        "• Esqueci minha senha do SIGAA\n"
+        "• Como consultar a unidade atual?\n\n"
+        "<b>🌐 Rede e sistemas:</b>\n"
+        "• Como conectar no Wi-Fi?\n"
+        "• Configurar Eduroam\n"
+        "• Esqueci a senha do SIGAA\n"
         "• Como instalar o Office?\n\n"
-        "🖨️ <b>Outros serviços:</b>\n"
-        "• Como usar a impressora?\n"
-        "• Como acessar o servidor de arquivos?\n"
-        "• Como assinar documentos digitalmente?\n\n"
-        "📌 <b>Comandos úteis:</b>\n"
-        "• /start — boas-vindas\n"
+        "<b>🆘 Suporte:</b>\n"
+        "• Como abrir um chamado?\n"
+        "• Onde fica a DTI?\n\n"
+        "<b>📌 Comandos disponíveis:</b>\n"
+        "• /ajuda — esta mensagem\n"
+        "• /exemplos — mais exemplos\n"
         "• /status — estatísticas do bot\n"
-        "• /historico — ver o que você já perguntou\n"
-        "• /limpar — apagar seu histórico de conversa\n\n"
-        "📌 <b>Fontes:</b>\n"
-        "FAQ do SIPAC + 22 tutoriais da Wiki UFCA + info extra.\n\n"
-        "⚠️ <b>Importante:</b>\n"
-        "Não invento respostas. Se não encontrar na base, eu aviso.",
+        "• /historico — suas perguntas\n"
+        "• /limpar — apagar histórico\n\n"
+        "<b>⚠️ Importante:</b>\n"
+        "Não invento respostas. Se não encontrar na base, "
+        "indico o link oficial ou o Atende UFCA.",
         parse_mode="HTML"
     )
-
-
+# --------------------------------------------------
+# COMANDO /EXEMPLOS
+# --------------------------------------------------
+async def exemplos(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "<b>💬 Exemplos de perguntas que eu respondo</b>\n\n"
+        "<b>📋 SIPAC (processos):</b>\n"
+        "• Como adicionar um despacho?\n"
+        "• Como cancelar um documento?\n"
+        "• Como consultar a unidade atual?\n"
+        "• Como acessar processo sigiloso?\n"
+        "• Como tramitar um processo?\n\n"
+        "<b>🌐 Rede:</b>\n"
+        "• Como conectar no Wi-Fi?\n"
+        "• Como configurar Eduroam no Linux?\n"
+        "• Onde fica a DTI?\n\n"
+        "<b>📧 Sistemas:</b>\n"
+        "• Como acessar meu e-mail?\n"
+        "• Esqueci a senha do SIGAA\n"
+        "• Como instalar o Office?\n"
+        "• Como acessar o Moodle?\n"
+        "• Como consultar o contracheque?\n\n"
+        "<b>🎥 Reuniões online:</b>\n"
+        "• Como fazer reunião no Conferência Web?\n\n"
+        "<b>🆘 Suporte:</b>\n"
+        "• Como abrir um chamado?\n"
+        "• Qual o site do atendimento?\n"
+        "• Preciso de ajuda\n\n"
+        "<i>É só escrever sua dúvida que eu busco na base oficial.</i>",
+        parse_mode="HTML"
+    )
 # --------------------------------------------------
 # COMANDO /STATUS (painel de controle)
 # --------------------------------------------------
@@ -1148,6 +1176,7 @@ app = Application.builder().token(TOKEN).build()
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("ajuda", ajuda))
+app.add_handler(CommandHandler("exemplos", exemplos))
 app.add_handler(CommandHandler("status", status))
 app.add_handler(CommandHandler("limpar", limpar))
 app.add_handler(CommandHandler("historico", ver_historico))

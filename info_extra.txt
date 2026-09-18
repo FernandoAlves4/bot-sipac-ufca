@@ -1,5 +1,5 @@
 ======================================================================
-Contatos e atendimento da DTI
+Suporte da DTI: site, contatos e abertura de chamados
 https://atendimento.ufca.edu.br
 
 A DTI (Diretoria de Tecnologia da Informação) é o setor responsável pelo
@@ -111,41 +111,119 @@ Opção 3 (chamado):
 ======================================================================
 
 ======================================================================
-Contatos e localização da UFCA
+Sobre a UFCA
 https://www.ufca.edu.br/
 
-Campus sede (Juazeiro do Norte - CE):
-- Endereço: Rua Tenente Raimundo Rocha, 1639 - Cidade Universitária
-- CEP: 63048-080
+A UFCA (Universidade Federal do Cariri) é uma universidade pública federal
+localizada no interior do Ceará.
 
-A DTI (Diretoria de Tecnologia da Informação) fica no bloco I do campus sede.
+Campus sede: Juazeiro do Norte - CE
+Site oficial: https://www.ufca.edu.br/
 
-Site oficial da UFCA: https://www.ufca.edu.br/
-Sistema de atendimento (Atende UFCA): https://atendimento.ufca.edu.br
+Para informações específicas de contato, consulte o site oficial.
+=====================================================================
 
-Para informações atualizadas de contatos, consulte o site oficial da UFCA.
+======================================================================
+SIGAA - Portal do Discente
+https://sig.ufca.edu.br/sigaa/
+
+O SIGAA (Sistema Integrado de Gestão de Atividades Acadêmicas) é o sistema
+acadêmico da UFCA, usado por discentes.
+
+No Portal do Discente, você pode:
+- Consultar notas
+- Emitir atestado de matrícula
+- Emitir declaração de vínculo
+- Consultar histórico escolar
+- Realizar matrícula em disciplinas
+- Trancar disciplina
+- Solicitar benefícios (bolsa auxílio, moradia)
+- Consultar turmas e horários
+- Acessar turmas virtuais (via Moodle)
+
+Como acessar:
+1- Acesse https://sig.ufca.edu.br/sigaa/
+2- Faça login com CPF ou matrícula + senha
+3- Navegue pelo menu "Portal do Discente"
+
+Se esqueceu a senha, use a opção "Esqueci minha senha" na tela de login.
+Se ainda não tem conta, crie nos SIGs ou procure a DTI.
 ======================================================================
 
 ======================================================================
-Atendimento da DTI (Diretoria de Tecnologia da Informação)
-https://atendimento.ufca.edu.br
+SIGRH - Portal do Servidor
+https://sig.ufca.edu.br/sigrh/
 
-A DTI é o setor responsável pelo suporte técnico relacionado a:
-- Sistemas (SIPAC, SIGAA, SIGRH, SEI, e-mail, Office 365)
-- Rede e internet (Wi-Fi, Eduroam, VPN)
-- Equipamentos e impressoras
-- Acessos e senhas
+O SIGRH (Sistema Integrado de Gestão de Recursos Humanos) é o sistema de RH
+da UFCA, usado por servidores (docentes e técnico-administrativos).
 
-Canais de atendimento:
-- Sistema oficial: https://atendimento.ufca.edu.br (abertura de chamados)
-- Presencial: bloco I (campus sede, Juazeiro do Norte)
+No Portal do Servidor, você pode:
+- Consultar contracheque
+- Solicitar férias
+- Registrar ponto
+- Consultar dados funcionais
+- Emitir declarações
+- Solicitar licenças e afastamentos
 
-Para abrir um chamado:
-1- Acesse https://atendimento.ufca.edu.br
+Como acessar:
+1- Acesse https://sig.ufca.edu.br/sigrh/
+2- Faça login com CPF + senha institucional
+3- Navegue pelo menu do servidor
+
+Se esqueceu a senha, use a opção "Esqueci minha senha" ou procure a DTI.
+======================================================================
+
+======================================================================
+Moodle UFCA - Turmas Virtuais
+https://moodle.ufca.edu.br
+
+O Moodle é o ambiente virtual de aprendizagem da UFCA. Professores
+disponibilizam materiais, atividades e avaliações por lá.
+
+Como acessar:
+1- Acesse https://moodle.ufca.edu.br
 2- Faça login com suas credenciais institucionais
-3- Clique em "Criar chamado"
-4- Escolha a categoria e descreva o problema
-5- Envie
+3- Suas turmas aparecem automaticamente
 
-A equipe da DTI responde pelo próprio sistema.
+Se não estiver matriculado em nenhuma turma, verifique no SIGAA se a
+matrícula foi confirmada.
+======================================================================
+
+======================================================================
+Aplicativos do Office 365 Educacional
+https://www.office.com
+
+Com a conta institucional da UFCA, você tem acesso a:
+- Word, Excel, PowerPoint (web e desktop)
+- OneNote (anotações)
+- Outlook (e-mail institucional)
+- OneDrive (armazenamento em nuvem)
+- Microsoft Authenticator (autenticação em duas etapas)
+
+Como acessar:
+1- Acesse https://www.office.com
+2- Faça login com sua conta institucional (@ufca.edu.br ou @aluno.ufca.edu.br)
+3- Use as ferramentas direto no navegador
+
+Para instalar a versão desktop:
+1- Após fazer login, clique em "Instalar Office"
+2- Baixe e execute o instalador
+3- Faça login para ativar
+======================================================================
+
+======================================================================
+Conferência Web RNP (reuniões online)
+https://conferenciaweb.rnp.br
+
+O Conferência Web RNP é a ferramenta oficial da UFCA para reuniões e aulas
+online com áudio, vídeo e compartilhamento de tela.
+
+Como usar:
+1- Acesse https://conferenciaweb.rnp.br
+2- Faça login com sua conta institucional (ou como visitante, se tiver link)
+3- Crie uma sala ou entre em uma existente
+4- Compartilhe o link com os participantes
+
+Para criar uma sala, é necessário ter conta institucional.
+Para participar, normalmente basta o link enviado pelo organizador.
 ======================================================================
