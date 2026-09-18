@@ -25,3 +25,117 @@ Quando abrir um chamado:
 - Problemas com equipamentos
 - Qualquer coisa que o assistente não consiga responder
 ======================================================================
+
+
+======================================================================
+Como abrir um processo no SIPAC
+https://wiki.ufca.edu.br/pt-br/dti/CSI/faqSipac
+
+O SIPAC é o sistema de processos eletrônicos da UFCA.
+
+Como abrir um novo processo:
+1- Acesse o SIPAC com suas credenciais institucionais
+2- No menu, clique em "Protocolo" → "Processos" → "Abrir Processo"
+3- Escolha o tipo de processo (conforme sua necessidade)
+4- Selecione a unidade de origem
+5- Preencha os dados solicitados
+6- Anexe os documentos necessários (se houver)
+7- Clique em "Abrir Processo"
+
+Após abrir, o processo pode ser tramitado entre unidades, receber documentos,
+despachos e assinaturas digitais.
+
+Se tiver dúvidas específicas sobre o seu caso, abra um chamado no Atende UFCA.
+======================================================================
+
+======================================================================
+Como usar o SEI na UFCA
+https://www.gov.br/sei/pt-br
+
+O SEI (Sistema Eletrônico de Informações) é outro sistema de processos
+eletrônicos usado em órgãos federais.
+
+Na UFCA, o sistema principal de processos é o SIPAC. O SEI pode ser
+usado em casos específicos (convênios, parcerias com órgãos federais, etc).
+
+Se você precisa usar o SEI, verifique com sua chefia imediata ou com a DTI
+se o seu setor tem acesso. Para mais informações, abra um chamado no Atende UFCA.
+======================================================================
+
+======================================================================
+Acessar o e-mail institucional da UFCA (Outlook)
+https://outlook.office.com/
+
+Servidores e estudantes da UFCA têm e-mail institucional no Office 365.
+
+Como acessar:
+1- Acesse https://outlook.office.com/
+2- Faça login com seu e-mail institucional (@ufca.edu.br ou @aluno.ufca.edu.br)
+3- Digite sua senha institucional
+4- Pronto! Você está no seu e-mail
+
+Se ainda não criou sua conta, veja o tutorial "Criar conta Office 365 Educacional"
+na Wiki UFCA. Se esqueceu a senha, use a opção "Esqueci minha senha" na tela
+de login, ou abra um chamado no Atende UFCA.
+======================================================================
+
+======================================================================
+Como recuperar ou redefinir a senha dos SIGs (SIGAA, SIPAC, SIGRH)
+https://atende.ufca.edu.br
+
+Se você esqueceu a senha dos sistemas SIGs (SIGAA, SIPAC, SIGRH) da UFCA:
+
+Opção 1 (online):
+1- Acesse a tela de login do sistema (SIGAA, SIPAC ou SIGRH)
+2- Clique em "Esqueci minha senha"
+3- Siga as instruções para recuperar por e-mail
+
+Opção 2 (presencial):
+1- Vá até a DTI (bloco I) com documento de identidade
+2- Solicite a redefinição de senha
+
+Opção 3 (chamado):
+1- Acesse https://atende.ufca.edu.br
+2- Abra um chamado na categoria "Sistemas" ou "Acesso"
+3- Aguarde o retorno da equipe da DTI
+======================================================================
+
+======================================================================
+Contatos e localização da UFCA
+https://www.ufca.edu.br/
+
+Campus sede (Juazeiro do Norte - CE):
+- Endereço: Rua Tenente Raimundo Rocha, 1639 - Cidade Universitária
+- CEP: 63048-080
+
+A DTI (Diretoria de Tecnologia da Informação) fica no bloco I do campus sede.
+
+Site oficial da UFCA: https://www.ufca.edu.br/
+Sistema de atendimento (Atende UFCA): https://atende.ufca.edu.br
+
+Para informações atualizadas de contatos, consulte o site oficial da UFCA.
+======================================================================
+
+======================================================================
+Atendimento da DTI (Diretoria de Tecnologia da Informação)
+https://atende.ufca.edu.br
+
+A DTI é o setor responsável pelo suporte técnico relacionado a:
+- Sistemas (SIPAC, SIGAA, SIGRH, SEI, e-mail, Office 365)
+- Rede e internet (Wi-Fi, Eduroam, VPN)
+- Equipamentos e impressoras
+- Acessos e senhas
+
+Canais de atendimento:
+- Sistema oficial: https://atende.ufca.edu.br (abertura de chamados)
+- Presencial: bloco I (campus sede, Juazeiro do Norte)
+
+Para abrir um chamado:
+1- Acesse https://atende.ufca.edu.br
+2- Faça login com suas credenciais institucionais
+3- Clique em "Criar chamado"
+4- Escolha a categoria e descreva o problema
+5- Envie
+
+A equipe da DTI responde pelo próprio sistema.
+======================================================================
