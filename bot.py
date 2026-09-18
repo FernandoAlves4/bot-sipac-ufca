@@ -242,6 +242,9 @@ PALAVRAS_DISCRIMINATIVAS = {
     "softphone", "ramal", "serpro", "monitoria",
     "sigaa", "sigrh", "sigs", "conta", "cadastro",
     "pdf", "tarja", "destacar", "ocultar"
+    # RH
+    "contracheque", "holerite", "salario", "remuneracao", "pagamento",
+    "ferias", "ponto", "sigrh",
 }
 
 
@@ -367,6 +370,15 @@ SINONIMOS = {
     "chamada": ["ligacao", "telefone", "ramal", "telefonica"],
     "ligacao": ["chamada", "telefone", "ramal"],
 
+      # RH / servidor
+    "contracheque": ["salario", "pagamento", "holerite", "sigrh", "remuneracao"],
+    "holerite": ["contracheque", "salario", "sigrh", "pagamento"],
+    "salario": ["contracheque", "holerite", "pagamento", "remuneracao"],
+    "remuneracao": ["contracheque", "salario", "holerite"],
+    "pagamento": ["contracheque", "salario", "holerite"],
+    "ferias": ["sigrh", "descanso", "afastamento"],
+    "ponto": ["sigrh", "frequencia", "presenca"],
+
     # ==========================================
     # ERROS E PROBLEMAS
     # ==========================================
@@ -479,10 +491,12 @@ def buscar_resposta_hibrida(pergunta_usuario, top_k_rag=5):
     palavras_chamado = ["chamado", "ticket", "chamados", "tickets"]
     palavras_acao = ["abrir", "criar", "novo", "nova", "fazer", "preciso"]
 
-    if any(p in pergunta_lower for p in palavras_chamado) and \
-       any(p in pergunta_lower for p in palavras_acao):
+    # Regra especial: "contracheque", "salario", "ferias" → SIGRH
+    palavras_rh = ["contracheque", "holerite", "salario", "salário", "ferias", "férias",
+                   "ponto", "remuneracao", "remuneração", "pagamento"]
+    if any(p in pergunta_lower for p in palavras_rh):
         for bloco in perguntas_faq:
-           if "suporte" in bloco["titulo"].lower() or "atend" in bloco["titulo"].lower():
+            if "sigrh" in bloco["titulo"].lower():
                 bloco["_score"] = 999
                 return bloco
 
@@ -538,6 +552,20 @@ def buscar_resposta_hibrida(pergunta_usuario, top_k_rag=5):
     if tem_site and tem_suporte_em_site:
         for bloco in perguntas_faq:
             if "suporte" in bloco["titulo"].lower() or "atend" in bloco["titulo"].lower():
+                bloco["_score"] = 999
+                return bloco
+
+    # --------------------------------------------------
+    # REGRA 5: palavras de RH → SIGRH (Portal do Servidor)
+    # --------------------------------------------------
+    palavras_rh = [
+        "contracheque", "holerite", "salario", "salário", "remuneracao",
+        "remuneração", "pagamento", "ferias", "férias", "ponto",
+        "sigrh", "servidor", "funcional"
+    ]
+    if any(p in pergunta_lower for p in palavras_rh):
+        for bloco in perguntas_faq:
+            if "sigrh" in bloco["titulo"].lower():
                 bloco["_score"] = 999
                 return bloco
 
