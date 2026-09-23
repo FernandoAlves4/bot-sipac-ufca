@@ -987,12 +987,19 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         ultima = "?"
 
+    # Conta sugestões
+    sugestoes = 0
+    if os.path.exists(ARQUIVO_SUGESTOES):
+        with open(ARQUIVO_SUGESTOES, "r", encoding="utf-8") as f:
+            sugestoes = len([l for l in f if l.strip()])
+
     mensagem = (
         "📊 <b>Painel do Bot</b>\n\n"
         f"📚 Base: <b>{total_base}</b> blocos carregados\n"
         f"❓ Perguntas não encontradas: <b>{nao_encontradas}</b>\n"
         f"👍 Feedbacks positivos: <b>{positivos}</b>\n"
         f"👎 Feedbacks negativos: <b>{negativos}</b>\n"
+        f"💬 Sugestões recebidas: <b>{sugestoes}</b>\n"
         f"📈 Taxa de acerto: <b>{taxa_str}</b>\n\n"
         f"🕐 Base atualizada em: {ultima}"
     )
