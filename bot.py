@@ -694,6 +694,51 @@ def registrar_feedback(pergunta, titulo_faq, voto):
     with open(ARQUIVO_FEEDBACK, "a", encoding="utf-8") as arquivo:
         arquivo.write(linha)
 
+# --------------------------------------------------
+# SUGESTÕES DE USUÁRIOS (/feedback)
+# --------------------------------------------------
+
+ARQUIVO_SUGESTOES = "sugestoes.txt"
+
+
+def registrar_sugestao(user_id, sugestao):
+    """Salva uma sugestão enviada pelo usuário."""
+    agora = datetime.now().strftime("%Y-%m-%d %H:%M")
+    linha = f"[{agora}] {user_id}: {sugestao}\n"
+
+    with open(ARQUIVO_SUGESTOES, "a", encoding="utf-8") as arquivo:
+        arquivo.write(linha)
+
+
+async def feedback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Comando /feedback: recebe sugestões dos usuários."""
+    user_id = str(update.effective_user.id) if update.effective_user else "?"
+
+    # Pega o texto depois do comando
+    texto = " ".join(context.args) if context.args else ""
+
+    if not texto:
+        await update.message.reply_text(
+            "<b>💬 Enviar sugestão</b>\n\n"
+            "Escreva sua sugestão junto com o comando. Exemplos:\n"
+            "• <code>/feedback Adicionar informação sobre VPN</code>\n"
+            "• <code>/feedback Melhorar resposta sobre o SIGAA</code>\n"
+            "• <code>/feedback Incluir tutorial de impressão</code>\n\n"
+            "<i>Suas sugestões nos ajudam a melhorar o bot.</i>",
+            parse_mode="HTML"
+        )
+        return
+
+    # Limita o tamanho da sugestão
+    texto = texto.strip()[:500]
+
+    registrar_sugestao(user_id, texto)
+
+    await update.message.reply_text(
+        "✅ <b>Feedback registrado!</b>\n\n"
+        "Obrigado pela sugestão. Ela será analisada pela equipe responsável.",
+        parse_mode="HTML"
+    )
 
 # --------------------------------------------------
 # HISTÓRICO DE CONVERSA (persistente em arquivo)
@@ -869,7 +914,8 @@ async def ajuda(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "• /exemplos — mais exemplos\n"
         "• /status — estatísticas do bot\n"
         "• /historico — suas perguntas\n"
-        "• /limpar — apagar histórico\n\n"
+        "• /limpar — apagar histórico\n"
+        "• /feedback — enviar sugestão\n\n"
         "<b>⚠️ Importante:</b>\n"
         "Não invento respostas. Se não encontrar na base, "
         "indico o link oficial ou o Atende UFCA.",
@@ -1203,6 +1249,7 @@ app = Application.builder().token(TOKEN).build()
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("ajuda", ajuda))
 app.add_handler(CommandHandler("exemplos", exemplos))
+app.add_handler(CommandHandler("feedback", feedback))
 app.add_handler(CommandHandler("status", status))
 app.add_handler(CommandHandler("limpar", limpar))
 app.add_handler(CommandHandler("historico", ver_historico))
