@@ -95,7 +95,7 @@ def gerar_resposta_ia(pergunta_usuario, titulo_faq, conteudo_faq, historico=None
         linhas = []
         for h in historico:
             linhas.append(f"• Usuário: {h['pergunta']}")
-            linhas.append(f"  Bot: {h['resposta'][:300]}")  # corta resposta longa
+            linhas.append(f"  Bot: {h['resposta'][:80]}")  # corta resposta longa
         bloco_historico = "HISTÓRICO DE CONVERSA (mais antiga → mais recente):\n"
         bloco_historico += "\n".join(linhas) + "\n\n"
 

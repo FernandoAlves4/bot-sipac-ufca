@@ -220,8 +220,11 @@ def carregar_embeddings():
         return False
 
 
-rag_disponivel = carregar_embeddings()
-
+# Pré-carrega o modelo pra primeira mensagem ser rápida
+if rag_disponivel:
+    print("Pré-carregando modelo de embeddings...", flush=True)
+    _modelo_rag.encode(["warmup"])
+    print("Modelo pronto!", flush=True)
 
 # --------------------------------------------------
 # PROCURAR A PERGUNTA MAIS PARECIDA
@@ -745,7 +748,7 @@ async def feedback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # --------------------------------------------------
 
 ARQUIVO_HISTORICO = "historico.json"
-MAX_HISTORICO = 5              # máx de interações guardadas por usuário
+MAX_HISTORICO = 2              # máx de interações guardadas por usuário
 DIAS_INATIVIDADE = 30          # apaga histórico sem uso há N dias
 
 _historico_global = {}         # cache em memória
@@ -818,16 +821,20 @@ def salvar_no_historico_por_id(user_id, pergunta, resposta):
 
     # Remove formatação Markdown/HTML da resposta antes de salvar
     # (para o /historico mostrar texto limpo)
-    resposta_limpa = resposta.replace("**", "").replace("__", "")
-    resposta_limpa = resposta_limpa.replace("<b>", "").replace("</b>", "")
-    resposta_limpa = resposta_limpa.replace("<i>", "").replace("</i>", "")
-    resposta_limpa = resposta_limpa.replace("`", "")
-    resposta = resposta_limpa
-
+    # Remove TODAS as tags HTML/Markdown (evita erro no Telegram)
+    import re as _re
+    resposta = _re.sub(r"<[^>]+>", "", resposta)   # remove <tag>
+    resposta = _re.sub(r"\*\*(.+?)\*\*", r"\1", resposta)  # **texto** → texto
+    resposta = _re.sub(r"__(.+?)__", r"\1", resposta)      # __texto__ → texto
+    resposta = resposta.replace("`", "")
+    resposta = resposta.replace("*", "")
+    resposta = resposta.replace("_", " ")
     if not user_id:
         print(" user_id vazio, não salva", flush=True)
         return
     user_id = str(user_id)
+
+
 
     if user_id not in _historico_global:
         _historico_global[user_id] = {
@@ -1024,7 +1031,6 @@ async def limpar(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # --------------------------------------------------
 # COMANDO /HISTORICO (mostra o histórico)
 # --------------------------------------------------
-
 async def ver_historico(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = str(update.effective_user.id) if update.effective_user else None
     historico = obter_historico_por_id(user_id)
@@ -1035,12 +1041,22 @@ async def ver_historico(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         return
 
+    import re as _re
     linhas = [f"📜 <b>Suas últimas {len(historico)} perguntas:</b>\n"]
 
     for i, h in enumerate(historico, start=1):
-        # Limpa quebras de linha e formatação da resposta
+        # Limpa HTML/Markdown da resposta
         pergunta = h['pergunta']
-        resposta = h['resposta'][:120].replace("\n", " ").strip()
+        resposta = h['resposta'][:150].replace("\n", " ").strip()
+        resposta = _re.sub(r"<[^>]+>", "", resposta)  # remove tags
+        resposta = _re.sub(r"\*\*(.+?)\*\*", r"\1", resposta)
+        resposta = resposta.replace("*", "").replace("_", " ")
+        resposta = resposta.replace("`", "")
+        resposta = resposta.replace("&", "&amp;")  # escapa
+        resposta = resposta.replace("<", "&lt;").replace(">", "&gt;")  # escapa
+
+        # Escapa a pergunta também
+        pergunta = pergunta.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
         linhas.append(f"<b>{i}. {pergunta}</b>")
         linhas.append(f"   <i>→ {resposta}...</i>")
@@ -1048,10 +1064,17 @@ async def ver_historico(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     linhas.append(f"<i>Use /limpar para apagar o histórico.</i>")
 
-    await update.message.reply_text(
-        "\n".join(linhas),
-        parse_mode="HTML"
-    )
+    try:
+        await update.message.reply_text(
+            "\n".join(linhas),
+            parse_mode="HTML"
+        )
+    except Exception as e:
+        print(f"ERRO ao enviar /historico: {e}", flush=True)
+        await update.message.reply_text(
+            "📜 Histórico disponível, mas houve um erro ao formatar. "
+            "Use /limpar para começar de novo."
+        )
 
 # --------------------------------------------------
 # RESPONDER PERGUNTAS
