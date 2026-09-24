@@ -220,6 +220,8 @@ def carregar_embeddings():
         return False
 
 
+rag_disponivel = carregar_embeddings()
+
 # Pré-carrega o modelo pra primeira mensagem ser rápida
 if rag_disponivel:
     print("Pré-carregando modelo de embeddings...", flush=True)
