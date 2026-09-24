@@ -29,3 +29,32 @@ sudo systemctl restart bot-sipac
 - `/status` — painel de estatísticas
 - `/historico` — ver o que você já perguntou
 - `/limpar` — apagar seu histórico de conversa
+
+
+
+
+---
+
+## 🖥️ VM Oracle Cloud
+
+- **Hostname:** vnic-avanci
+- **Usuário:** nando
+- **Projeto:** /home/nando/bot-sipac-ufca
+- **Acesso:** `ssh oci-danilo` (do PC)
+
+### Comandos na VM
+
+| Comando | O que faz |
+|---|---|
+| `sudo systemctl status bot-sipac` | Ver status |
+| `sudo systemctl restart bot-sipac` | Reiniciar |
+| `sudo journalctl -u bot-sipac -n 30` | Logs |
+| `crontab -l` | Ver cron |
+
+### Atualizar a base
+
+```bash
+cd ~/bot-sipac-ufca
+source venv/bin/activate
+~/bot-sipac-ufca/atualizar_base.sh
+```
