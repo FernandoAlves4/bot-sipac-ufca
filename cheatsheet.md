@@ -76,3 +76,28 @@ git pull
 | `/limpar` | Apagar histórico |
 | `/feedback` | Enviar sugestão |
 
+---
+
+## 🏢 GitLab UFCA (trabalho)
+
+- **Repo:** https://git.ufca.edu.br/atendimento/cico
+- **Pasta local:** `~/cico/`
+- **Pasta no repo:** `channels/telegram/`
+- **Branch principal:** `main`
+- **Convenções:**
+  - Branch por tarefa: `feat/xxx`, `fix/xxx`
+  - MR obrigatório (não commitar direto na `main`)
+  - Commits com prefixo: `feat(telegram): ...`, `docs(fontes): ...`
+  - CI: gitleaks + pytest + preflight
+
+### Fluxo de trabalho
+
+```bash
+cd ~/cico
+git checkout -b feat/nova-feature
+# ... editar ...
+git add .
+git commit -m "feat(telegram): descrição"
+git push -u origin feat/nova-feature
+# Abrir MR no GitLab
+```

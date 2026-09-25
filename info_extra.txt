@@ -151,7 +151,7 @@ Se ainda não tem conta, crie nos SIGs ou procure a DTI.
 ======================================================================
 
 ======================================================================
-SIGRH - Portal do Servidor
+SIGRH - Portal do Servidor (contracheque, férias, ponto)
 https://sig.ufca.edu.br/sigrh/
 
 O SIGRH (Sistema Integrado de Gestão de Recursos Humanos) é o sistema de RH
