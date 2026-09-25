@@ -875,20 +875,42 @@ _limpar_historicos_antigos()
 # --------------------------------------------------
 # COMANDO /START
 # --------------------------------------------------
-
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "Olá! 👋\n\n"
-        "Sou o Assistente da Wiki UFCA.\n"
-        "Posso responder dúvidas sobre:\n\n"
-        "• SIPAC (processos, despachos, documentos)\n"
-        "• Rede Wi-Fi, Eduroam, VPN\n"
-        "• SIGAA, SIGRH, SIGs, Office 365\n"
-        "• Impressão, arquivos, assinatura digital\n\n"
-        "Pode enviar sua dúvida!\n\n"
-        "Digite /ajuda para ver exemplos de perguntas."
+        "🤖 <b>Assistente da Wiki UFCA</b>\n\n"
+        "Olá! 👋 Sou um bot que responde dúvidas sobre a UFCA "
+        "com base em <i>fontes oficiais</i> (Wiki UFCA).\n\n"
+
+        "📚 <b>Assuntos que eu domino:</b>\n"
+        "• <b>SIPAC</b> — processos, despachos, documentos, tramitação\n"
+        "• <b>Rede</b> — Wi-Fi, Eduroam, VPN\n"
+        "• <b>Sistemas</b> — SIGAA, SIGRH, Office 365, e-mail\n"
+        "• <b>Serviços</b> — impressão, arquivos, assinatura digital\n"
+        "• <b>Suporte</b> — Atende UFCA, DTI, contatos\n\n"
+
+        "💬 <b>Como perguntar:</b>\n"
+        "Escreva sua dúvida em linguagem natural. Exemplos:\n"
+        "• <i>Como adicionar um despacho?</i>\n"
+        "• <i>Como conectar no Wi-Fi?</i>\n"
+        "• <i>Esqueci a senha do SIGAA</i>\n\n"
+
+        "📌 <b>Comandos disponíveis:</b>\n"
+        "• /ajuda — exemplos de perguntas\n"
+        "• /exemplos — mais exemplos por categoria\n"
+        "• /status — estatísticas do bot\n"
+        "• /historico — suas últimas perguntas\n"
+        "• /limpar — apagar histórico\n"
+        "• /feedback — enviar sugestão\n\n"
+
+        "⚠️ <b>Importante:</b>\n"
+        "Não invento respostas. Se não encontrar na base oficial, "
+        "indico o link ou o Atende UFCA.\n\n"
+
+        "🆘 <b>Precisa de suporte?</b>\n"
+        "<a href='https://atendimento.ufca.edu.br'>Abrir chamado no Atende UFCA</a>",
+        parse_mode="HTML",
+        disable_web_page_preview=True
     )
-    
 
 # --------------------------------------------------
 # COMANDO /AJUDA
