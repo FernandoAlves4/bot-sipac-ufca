@@ -881,24 +881,63 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Olá! 👋 Sou um bot que responde dúvidas sobre a UFCA "
         "com base em <i>fontes oficiais</i> (Wiki UFCA).\n\n"
 
-        "📚 <b>Assuntos que eu domino:</b>\n"
-        "• <b>SIPAC</b> — processos, despachos, documentos, tramitação\n"
-        "• <b>Rede</b> — Wi-Fi, Eduroam, VPN\n"
-        "• <b>Sistemas</b> — SIGAA, SIGRH, Office 365, e-mail\n"
-        "• <b>Serviços</b> — impressão, arquivos, assinatura digital\n"
-        "• <b>Suporte</b> — Atende UFCA, DTI, contatos\n\n"
-
-        "💬 <b>Como perguntar:</b>\n"
+        "💬 <b>Como usar:</b>\n"
         "Escreva sua dúvida em linguagem natural. Exemplos:\n"
         "• <i>Como adicionar um despacho?</i>\n"
         "• <i>Como conectar no Wi-Fi?</i>\n"
         "• <i>Esqueci a senha do SIGAA</i>\n\n"
 
+        "📚 <b>Assuntos que eu domino:</b>\n"
+        "SIPAC, Wi-Fi/Eduroam, Office 365, SIGAA/SIGRH, "
+        "impressão, arquivos, assinatura digital, suporte da DTI.\n\n"
+
+        "👉 <b>Digite /ajuda para ver todos os comandos e exemplos.</b>",
+
+        parse_mode="HTML",
+        disable_web_page_preview=True
+    )
+# --------------------------------------------------
+# COMANDO /AJUDA
+# --------------------------------------------------
+async def ajuda(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "📚 <b>Assistente da Wiki UFCA — Guia de Uso</b>\n\n"
+
+        "Sou um bot que responde dúvidas com base na "
+        "<i>Wiki oficial da UFCA</i>.\n\n"
+
+        "💬 <b>Como perguntar:</b>\n"
+        "Escreva sua dúvida em linguagem natural.\n\n"
+
+        "📋 <b>SIPAC (processos):</b>\n"
+        "• Como adicionar um despacho?\n"
+        "• Como cancelar um documento?\n"
+        "• Como consultar a unidade atual?\n"
+        "• Como tramitar um processo?\n\n"
+
+        "🌐 <b>Rede e sistemas:</b>\n"
+        "• Como conectar no Wi-Fi?\n"
+        "• Configurar Eduroam\n"
+        "• Esqueci a senha do SIGAA\n"
+        "• Como instalar o Office?\n"
+        "• Como acessar o Moodle?\n\n"
+
+        "📧 <b>Serviços:</b>\n"
+        "• Como acessar meu e-mail?\n"
+        "• Como consultar meu contracheque?\n"
+        "• Como fazer uma reunião online?\n\n"
+
+        "🆘 <b>Suporte:</b>\n"
+        "• Como abrir um chamado?\n"
+        "• Onde fica a DTI?\n"
+        "• Qual o site do atendimento?\n\n"
+
         "📌 <b>Comandos disponíveis:</b>\n"
-        "• /ajuda — exemplos de perguntas\n"
-        "• /exemplos — mais exemplos por categoria\n"
+        "• /start — boas-vindas\n"
+        "• /ajuda — esta mensagem\n"
+        "• /exemplos — mais exemplos\n"
         "• /status — estatísticas do bot\n"
-        "• /historico — suas últimas perguntas\n"
+        "• /historico — suas perguntas\n"
         "• /limpar — apagar histórico\n"
         "• /feedback — enviar sugestão\n\n"
 
@@ -908,44 +947,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         "🆘 <b>Precisa de suporte?</b>\n"
         "<a href='https://atendimento.ufca.edu.br'>Abrir chamado no Atende UFCA</a>",
+
         parse_mode="HTML",
         disable_web_page_preview=True
-    )
-
-# --------------------------------------------------
-# COMANDO /AJUDA
-# --------------------------------------------------
-
-async def ajuda(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(
-        "<b>📚 Assistente da Wiki UFCA</b>\n\n"
-        "Sou um bot que responde dúvidas sobre a UFCA "
-        "com base em fontes oficiais (Wiki UFCA).\n\n"
-        "<b>💬 Como perguntar:</b>\n"
-        "Escreva sua dúvida em linguagem natural. Exemplos:\n\n"
-        "<b>📋 SIPAC (processos):</b>\n"
-        "• Como adicionar um despacho?\n"
-        "• Como cancelar um documento?\n"
-        "• Como consultar a unidade atual?\n\n"
-        "<b>🌐 Rede e sistemas:</b>\n"
-        "• Como conectar no Wi-Fi?\n"
-        "• Configurar Eduroam\n"
-        "• Esqueci a senha do SIGAA\n"
-        "• Como instalar o Office?\n\n"
-        "<b>🆘 Suporte:</b>\n"
-        "• Como abrir um chamado?\n"
-        "• Onde fica a DTI?\n\n"
-        "<b>📌 Comandos disponíveis:</b>\n"
-        "• /ajuda — esta mensagem\n"
-        "• /exemplos — mais exemplos\n"
-        "• /status — estatísticas do bot\n"
-        "• /historico — suas perguntas\n"
-        "• /limpar — apagar histórico\n"
-        "• /feedback — enviar sugestão\n\n"
-        "<b>⚠️ Importante:</b>\n"
-        "Não invento respostas. Se não encontrar na base, "
-        "indico o link oficial ou o Atende UFCA.",
-        parse_mode="HTML"
     )
 # --------------------------------------------------
 # COMANDO /EXEMPLOS
