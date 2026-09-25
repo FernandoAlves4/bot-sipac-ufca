@@ -877,11 +877,6 @@ _limpar_historicos_antigos()
 # --------------------------------------------------
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    # Limpeza extra: converter Markdown residual para HTML
-    resposta = resposta.replace("**", "")  # Remove asteriscos duplos
-    # Converte *texto* para <b>texto</b> (se houver)
-    import re as _re
-    resposta = _re.sub(r"(?<!\*)\*(?!\s)(.+?)(?<!\s)\*(?!\*)", r"<b>\1</b>", resposta)
     await update.message.reply_text(
         "Olá! 👋\n\n"
         "Sou o Assistente da Wiki UFCA.\n"
