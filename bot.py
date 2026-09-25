@@ -1036,17 +1036,16 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # --------------------------------------------------
 # COMANDO /LIMPAR (apaga o histórico)
 # --------------------------------------------------
-
 async def limpar(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = str(update.effective_user.id) if update.effective_user else None
     apagar_historico_por_id(user_id)
-
     await update.message.reply_text(
-        "🧹 Histórico de conversa apagado.\n\n"
-        "A partir de agora, vou responder sem lembrar das mensagens anteriores."
+        "🧹 <b>Histórico apagado!</b>\n\n"
+        "A partir de agora, vou responder <i>sem lembrar</i> "
+        "das mensagens anteriores.\n\n"
+        "💡 <i>Use /start para recomeçar ou /ajuda para ver exemplos.</i>",
+        parse_mode="HTML"
     )
-
-
 # --------------------------------------------------
 # COMANDO /HISTORICO (mostra o histórico)
 # --------------------------------------------------
