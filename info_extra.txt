@@ -227,3 +227,9 @@ Como usar:
 Para criar uma sala, é necessário ter conta institucional.
 Para participar, normalmente basta o link enviado pelo organizador.
 ======================================================================
+======================================================================
+Teste de Deploy
+https://teste.ufca.edu.br
+
+Esse é um bloco de teste para verificar a detecção de mudanças no deploy.sh.
+======================================================================
