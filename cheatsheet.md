@@ -101,7 +101,13 @@ git commit -m "feat(telegram): descrição"
 git push -u origin feat/nova-feature
 # Abrir MR no GitLab
 ```
+---
 
-## Teste do deploy
-- Data: 2026-10-01
-- Funcionou! ✅
+## 🚀 Deploy automatizado
+
+### Uso
+
+```bash
+cd ~/bot_sipac
+./deploy.sh "mensagem do commit"
+```
